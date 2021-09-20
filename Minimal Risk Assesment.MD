@@ -1,28 +1,33 @@
+ 
+ ## Risk - Quick
+
+ ```mermaid
 flowchart TD
-Rescue(Realistic rescue)
-Vis(Visibility)
-Flow(High Flow)
-Restr(Restricted)
-Familiar(Experience in this cave)
-Lines(Linesystem intact and known)
-LocalBrief(Can get brief from someone with good knowledge)
-BackupTeam(Backup team onsite)
+Rescue(Redning)
+Vis(Sikt)
+Flow(Strøm)
+Restr(Trangt)
+Familiar(Kjennskap til dette systemet)
+Lines(Linesystem inntakt)
+LocalBrief(Mulightet for grunndig brief med lokalkjent?)
+BackupTeam(Standby team tilgjengelig?)
 
 Go(Go)
-Stop(Stop)
+Stop(Stopp)
 
-Rescue -->|No, recovery|Stop
-Rescue-->|Yes, possible|Lines
+Rescue -->|Usansynlig, recovery|Stop
+Rescue-->|Ja mulig|Lines
 Lines-->|Yes|Familiar
-Lines-->|No|Stop
-Familiar-->|Yes|Vis
-Familiar-->|No|LocalBrief
-LocalBrief-->|Yes|Vis
-LocalBrief-->|No|Stop
+Lines-->|Nei|Stop
+Familiar-->|Ja|Vis
+Familiar-->|Nei|LocalBrief
+LocalBrief-->|Ja|Vis
+LocalBrief-->|Nei|Stop
 Vis-->|>2m|Restr
 Vis-->|<2m|Stop
-Restr-->|Yes|Flow
-Flow-->|Yes|Stop
-Flow-->|No|BackupTeam
-BackupTeam-->|Yes|Go
-BackupTeam-->|No|Stop
+Restr-->|Ja|Flow
+Flow-->|Ja|Stop
+Flow-->|Nei|BackupTeam
+BackupTeam-->|Ja|Go
+BackupTeam-->|Ja|Stop
+ ```
